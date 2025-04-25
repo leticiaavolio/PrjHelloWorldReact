@@ -1,9 +1,18 @@
 import { StyleSheet, Text, TouchableOpacity} from 'react-native';
+import React,{useState} from "react";
+
 
 export default function Button() {
+
+  const [button, setLido] = useState("Saiba Mais")
+
+  function SaibaMais(){
+    alert("Você clicou no post")
+    setLido("Lido")
+  }
   return (
-    <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Saiba Mais</Text>
+    <TouchableOpacity style={styles.button} onPress={SaibaMais}>
+        <Text style={styles.buttonText}>{button}</Text>
     </TouchableOpacity>
 );
 }

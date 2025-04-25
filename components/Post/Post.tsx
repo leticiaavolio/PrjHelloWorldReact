@@ -5,6 +5,7 @@ import React from 'react';
 type Prop ={
   titulo:string,
   descricao:string,
+  imagem: object,
 }
 
 export default function Post(prop: Prop) {
@@ -12,8 +13,8 @@ export default function Post(prop: Prop) {
     <View style={styles.post}>
         <Text style={styles.headerPost}>{prop.titulo}</Text>
         <Text style={styles.textPost}>{prop.descricao}</Text>
-        <Image source={require('../../assets/rj.jpg')} style={styles.image} />
-        <Button />
+        <Image source={prop.imagem} style={styles.image} />
+        <Button/>
     </View>
 );
 }
